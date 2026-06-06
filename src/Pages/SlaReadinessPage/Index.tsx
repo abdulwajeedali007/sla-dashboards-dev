@@ -24,7 +24,7 @@ function Index() {
       <div className="my-6 flex flex-col gap-2  sm:flex-row sm:flex-wrap sm:gap-5 sm:px-0">
         <InfoBlock
           Icon={CircleCheckBig}
-          title={'Total clustertypes'}
+          title={'Total clusters'}
           ValueColor="text-green-700"
           value={22}
           IconColor="text-white"
@@ -40,6 +40,15 @@ function Index() {
           info="active departments"
         />
         <InfoBlock
+          Icon={User2Icon}
+          title="New"
+          value={5}
+          IconColor="text-white"
+          IconBg="bg-gray-700"
+          info={'Steps'}
+          ValueColor="text-gray-700"
+        />
+        <InfoBlock
           Icon={Clock7}
           title="In Progess"
           value={6}
@@ -50,21 +59,12 @@ function Index() {
         />
         <InfoBlock
           Icon={TriangleAlert}
-          title="Delayed"
+          title="SLA Breached"
           value={5}
           IconColor="text-white"
           IconBg="bg-red-500"
           ValueColor="text-red-500"
           info="Steps"
-        />
-        <InfoBlock
-          Icon={User2Icon}
-          title="Pending Approvals"
-          value={5}
-          IconColor="text-white"
-          IconBg="bg-purple-700"
-          info={'Steps'}
-          ValueColor="text-purple-700"
         />
       </div>
       <div className="flex justify-start gap-5 items-center mb-6 px-4 flex-wrap md:flex-nowrap ">
