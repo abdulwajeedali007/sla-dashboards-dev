@@ -9,10 +9,10 @@ export type Task = {
   lastUpdated: string;
   completed?: number;
   inprogress?: number;
-  atrisk?: number;
+  slabreached?: number;
   delayed?: number;
   pending?: number;
-  notstarted?: number;
+  new?: number;
   autocomplete?: number;
 };
 

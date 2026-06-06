@@ -67,31 +67,32 @@ function Index() {
           ValueColor="text-purple-700"
         />
       </div>
-      <div className="flex justify-between items-center mb-6 px-4 flex-wrap md:flex-nowrap ">
-        <div className="flex items-center gap-3 w-1/2 md:w-auto">
-          <p className="h-3 w-12 rounded bg-green-700"></p>
+      <div className="flex justify-start gap-5 items-center mb-6 px-4 flex-wrap md:flex-nowrap ">
+        <div className="flex items-center gap-2 w-1/2 md:w-auto">
+          <p className="h-3 w-8 rounded bg-gray-500"></p>
+          <p className="text-base">New</p>
+        </div>
+        <div className="flex items-center gap-2 w-1/2 md:w-auto">
+          <p className="h-3 w-8 rounded bg-green-700"></p>
           <p className="text-base">Completed</p>
         </div>
-        <div className="flex items-center gap-3 w-1/2 md:w-auto">
-          <p className="h-3 w-12 rounded bg-yellow-500"></p>
+        <div className="flex items-center gap-2 w-1/2 md:w-auto">
+          <p className="h-3 w-8 rounded bg-yellow-500"></p>
           <p className="text-base">In Progress</p>
         </div>
-        <div className="flex items-center gap-3 w-1/2 md:w-auto">
-          <p className="h-3 w-12 rounded bg-yellow-600"></p>
+        {/* <div className="flex items-center gap-3 w-1/2 md:w-auto">
+          <p className="h-3 w-8 rounded bg-yellow-600"></p>
           <p className="text-base">SLA Delayed</p>
+        </div> */}
+        <div className="flex items-center gap-2 w-1/2 md:w-auto">
+          <p className="h-3 w-8 rounded bg-red-700"></p>
+          <p className="text-base">SLA Breached</p>
         </div>
-        <div className="flex items-center gap-3 w-1/2 md:w-auto">
-          <p className="h-3 w-12 rounded bg-red-700"></p>
-          <p className="text-base">At Risk</p>
-        </div>
-        <div className="flex items-center gap-3 w-1/2 md:w-auto">
-          <p className="h-3 w-12 rounded bg-gray-500"></p>
-          <p className="text-base">Not Started</p>
-        </div>
-        <div className="flex items-center gap-3 w-1/2 md:w-auto">
-          <p className="h-3 w-12 rounded bg-blue-500"></p>
+
+        {/* <div className="flex items-center gap-3 w-1/2 md:w-auto">
+          <p className="h-3 w-8 rounded bg-blue-500"></p>
           <p className="text-base">Auto Complete</p>
-        </div>
+        </div> */}
       </div>
       <TableSalesTracker tasks={tasksProgress} />
     </>

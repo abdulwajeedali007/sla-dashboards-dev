@@ -17,28 +17,29 @@ const Index = ({ tasks }: Props) => {
           <tr>
             <th className="px-2 font-semibold text-xs py-4">#</th>
             <th className="px-2 font-semibold text-xs py-4">Department</th>
+            <th className="px-2 font-semibold text-xs py-4 text-gray-500">
+              New
+            </th>
             <th className="px-2 font-semibold text-xs py-4 text-green-500">
               Completed
             </th>
             <th className="px-2 font-semibold text-xs py-4 text-yellow-500">
               in Progress
             </th>
-            <th className="px-2 font-semibold text-xs py-4 text-yellow-700">
+            {/* <th className="px-2 font-semibold text-xs py-4 text-yellow-700">
               Delayed
             </th>
             <th className="px-2 font-semibold text-xs py-4 text-purple-500">
               Pending
-            </th>
+            </th>*/}
+
             <th className="px-2 font-semibold text-xs py-4 text-red-500">
-              At Risk
+              SLA Breached
             </th>
-            <th className="px-2 font-semibold text-xs py-4 text-gray-500">
-              not Started
-            </th>
-            <th className="px-2 font-semibold text-xs py-4 text-blue-500">
+            {/* <th className="px-2 font-semibold text-xs py-4 text-blue-500">
               Auto Complete
-            </th>
-            {/* <th className="px-2 font-semibold text-xs py-4">Progress</th> */}
+            </th> */}
+            <th className="px-2 font-semibold text-xs py-4">SLA Adherence %</th>
             <th className="px-2 font-semibold text-xs py-4">Created Date</th>
             <th className="px-2 font-semibold text-xs py-4">
               Lasted Updated Date

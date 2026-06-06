@@ -141,7 +141,7 @@ export default function Index({
                     >
                       <Link
                         to={`/cluster-execution/${cluster.clusterCode}`}
-                        className="pl-1 text-blue-600 font-semibold"
+                        className="pl-1 text-blue-600 font-semibold text-xs sm:text-sm"
                       >
                         {cluster.clusterName}
                       </Link>
