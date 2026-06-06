@@ -153,7 +153,7 @@ function Index() {
         </div>
       </div>
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 lg:col-span-9 bg-green-400 border-2">
+        <div className="col-span-12 lg:col-span-9 ">
           <div className="mb-6">
             <MileStoneWorkFlow
               title={initialTracker}
@@ -198,7 +198,7 @@ function Index() {
             />
           </div>
         </div>
-        <div className="col-span-12 lg:col-span-3 bg-red-400">
+        <div className="col-span-12 lg:col-span-3">
           <div className="shadow h-96 border-2 border-gray-400 rounded flex justify-center items-center bg-gray-200">
             <p>AI Integration is in progress</p>
           </div>

@@ -120,7 +120,7 @@ export default function Index({
             {groupVisibleTasks.map((project: TimelineProject) => (
               <div key={project.projectName} className="relative ">
                 {/* Project Header */}
-                <p className=" mb-0  px-4 text-xs font-bold p-1 bg-gray-100 w-screen text-gray-700 shadow">
+                <p className=" mb-0  px-4 text-xs font-bold p-1 bg-gray-100 text-gray-700 shadow">
                   {project.projectName}
                 </p>
 
