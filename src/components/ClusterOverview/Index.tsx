@@ -102,8 +102,8 @@ export default function Index({
 
   return (
     <>
-      <div className="rounded border border-gray-200 bg-white shadow-sm overflow-x-auto">
-        <div className=" min-w-[1400px] md:grid md:grid-cols-12">
+      <div className="rounded border border-gray-200 bg-white shadow-sm overflow-x-auto ">
+        <div className=" min-w-[1400px] max-h-[650px] md:grid md:grid-cols-12 ">
           {/* LEFT TABLE */}
           <div className="border-r border-gray-200 bg-white md:col-span-12 overflow-hidden">
             {/* HEADER */}
