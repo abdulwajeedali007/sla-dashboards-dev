@@ -136,7 +136,7 @@ function Index() {
                 </div>
               </div>
             </div>
-            <div className="my-6 p-3 rounded">
+            <div className="my-6 sm:p-3 rounded">
               {data && <Timeline timelineTasks={timelineData} />}
             </div>
           </>

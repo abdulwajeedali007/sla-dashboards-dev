@@ -13,7 +13,11 @@ import {
 import 'chartjs-adapter-date-fns';
 import { Link } from 'react-router';
 import { addDays, addMonths } from 'date-fns';
-import type { CalenderClusterData, TimelineCluster, TimelineProject } from '../../Types';
+import type {
+  CalenderClusterData,
+  TimelineCluster,
+  TimelineProject,
+} from '../../Types';
 
 import {
   timelineLabelPlugin,
@@ -50,7 +54,7 @@ export default function Timeline({
   )
     .toISOString()
     .split('T')[0];
-  const minDate = addDays(startDate, -5);
+  const minDate = addDays(startDate, -2);
   const maxDate = addMonths(startDate, 2);
 
   // Group the tasks as per the required data
@@ -120,8 +124,8 @@ export default function Timeline({
   let runningTop = 0;
   return (
     <>
-      <div className="overflow-auto sm:max-h-[650px]  flex  ">
-        <div className=" min-w-[150px]    relative mt-5 ">
+      <div className="overflow-y-auto sm:max-h-[650px]  flex">
+        <div className=" min-w-[140px]    relative mt-5 ">
           {groupVisibleTasks.map((project, index) => {
             // console.log(project);
             const currentTop = runningTop;
@@ -131,8 +135,8 @@ export default function Timeline({
             return (
               <div key={index}>
                 <h3
-                  className="absolute left-0 px-2 py-1 bg-gray-200  text-center rounded w-full text-xs  sm:text-sm"
-                  style={{ top: `${currentTop - 15}px` }}
+                  className="absolute left-0 px-2 py-1 bg-gray-200  text-center rounded w-full text-xs font-semibold"
+                  style={{ top: `${currentTop - 10}px` }}
                 >
                   {project.projectName}
                 </h3>
@@ -142,7 +146,7 @@ export default function Timeline({
                     key={cluster.clusterId}
                     // to={`/cluster/${cluster.id}`}
                     to={`/cluster-execution/${cluster.clusterCode}`}
-                    className="text-blue-600 flex items-center justify-center hover:underline text-sm sm:text-base font-semibold"
+                    className="text-blue-600 flex items-center justify-center hover:underline text-xs sm:text-sm font-semibold"
                     style={{
                       height: `${ROW_HEIGHT}px`,
                     }}
@@ -154,7 +158,7 @@ export default function Timeline({
             );
           })}
         </div>
-        <div className="min-w-[960px]  w-full">
+        <div className="min-w-[950px]  w-full">
           <TimelineChart
             data={data}
             options={options}
