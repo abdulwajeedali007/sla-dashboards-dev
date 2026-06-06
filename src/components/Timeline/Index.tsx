@@ -120,7 +120,7 @@ export default function Timeline({
   let runningTop = 0;
   return (
     <>
-      <div className="overflow-auto max-h-[650px]  flex  ">
+      <div className="overflow-auto sm:max-h-[650px]  flex  ">
         <div className=" min-w-[150px]    relative mt-5 ">
           {groupVisibleTasks.map((project, index) => {
             // console.log(project);
