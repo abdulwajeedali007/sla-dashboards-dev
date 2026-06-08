@@ -206,7 +206,7 @@ function Index() {
             />
           </div>
         </div>
-        <div className="col-span-12 lg:col-span-3">
+        <div className="col-span-12 mb-6 lg:col-span-3 md:mb-0">
           <div className="shadow h-96 border-2 border-gray-400 rounded flex justify-center items-center bg-gray-200">
             <p>AI Integration is in progress</p>
           </div>
