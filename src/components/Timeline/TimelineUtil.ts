@@ -25,6 +25,7 @@ export const groupVisibleTaskDetails = (
         clusterCode: item.pyID,
         clusterId: item.SLTClusterID,
         clusterName: item.SLTClusterName,
+        ClusterRegion: item.ClusterRegion,
         clusterUnits: item.SLTProposedNumberOfInventoryUnits,
         phases: [],
       };

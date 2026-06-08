@@ -83,6 +83,23 @@ export function getTaskNames(
   return taskNames;
 }
 
+// GET REGION NAMES
+export function getRegionNames(
+  data: CalenderClusterData[],
+  selectedProjectName: string,
+) {
+  const selectedProject = data.filter(
+    (item) => item.SLTProjectName === selectedProjectName,
+  );
+  const taskNames = selectedProject.reduce<string[]>((acc, item) => {
+    if (item.SLTProjectName && !acc.includes(item.ClusterRegion)) {
+      acc.push(item.ClusterRegion);
+    }
+    return acc;
+  }, []);
+  return taskNames;
+}
+
 // FORM FILTERS
 
 export function getFilterFormOptions(
@@ -110,7 +127,10 @@ export function getFilterFormOptions(
           appliedFilter.ClusterType === 'All' ||
           item.SLTClusterName === appliedFilter.ClusterType;
 
-        return yearMatch && projectMatch && clusterMatch;
+        const clusterRegionMatch =
+          appliedFilter.ClusterRegion === 'All' ||
+          item.ClusterRegion === appliedFilter.ClusterRegion;
+        return yearMatch && projectMatch && clusterMatch && clusterRegionMatch;
       })
   );
 }

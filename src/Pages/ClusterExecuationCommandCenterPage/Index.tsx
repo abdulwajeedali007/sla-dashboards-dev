@@ -61,8 +61,8 @@ function Index() {
       acc[item.TaskStatus] = (acc[item.TaskStatus] || 0) + 1;
       return acc;
     },
-    { Completed: 0, 'In progress': 0, New: 0 },
-  ) ?? { Completed: 0, 'In progress': 0, New: 0 };
+    { Completed: 0, 'In progress': 0, New: 0, Skipped: 0 },
+  ) ?? { Completed: 0, 'In progress': 0, New: 0, Skipped: 0 };
 
   const clusterPercentage = (taskStatus.Completed / 42) * 100;
 
@@ -123,7 +123,7 @@ function Index() {
         <InfoBlock
           Icon={SkipForward}
           title="Skipped"
-          value={10}
+          value={taskStatus.Skipped}
           IconColor="text-white"
           IconBg="bg-red-500"
           ValueColor="text-red-500"

@@ -35,6 +35,7 @@ export type formStateType = {
   Year: number;
   ProjectType: string;
   ClusterType: string;
+  ClusterRegion: string | null;
 };
 
 export type SlaTask = {
@@ -53,6 +54,7 @@ export type CalenderClusterData = {
   SLTBookingLaunchDate: string;
   pxObjClass: string;
   SLTProjectName: string;
+  ClusterRegion: string | null;
   SLTMarketingLaunchDate: string;
   SLTProposedNumberOfInventoryUnits: number;
   SLTClusterID: string;
@@ -67,7 +69,8 @@ export type TimelineProject = {
 export type TimelineCluster = {
   clusterCode: string;
   clusterId: string;
-  clusterName: string;
+  clusterName: string | null;
+  ClusterRegion: string;
   clusterUnits: number | string;
   phases: TimelinePhase[];
 };
@@ -83,4 +86,5 @@ export type TaskStatusCount = {
   Completed: number;
   'In progress': number;
   New: number;
+  Skipped: number;
 };

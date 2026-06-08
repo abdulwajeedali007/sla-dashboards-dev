@@ -14,12 +14,14 @@ function Index() {
     Year: currentYear,
     ProjectType: 'All',
     ClusterType: 'All',
+    ClusterRegion: 'All',
   });
 
   const [appliedFilter, setAppliedFilter] = useState<formStateType>({
     Year: currentYear,
     ProjectType: 'All',
     ClusterType: 'All',
+    ClusterRegion: 'All',
   });
   const dispatch = useAppDispatch();
 
@@ -33,7 +35,6 @@ function Index() {
 
   const timelineData = useMemo(() => {
     if (!data) return [];
-
     return data ? getFilterFormOptions(data, appliedFilter, currentYear) : [];
   }, [data, appliedFilter]);
 
@@ -42,6 +43,7 @@ function Index() {
       Year: currentYear,
       ProjectType: 'All',
       ClusterType: 'All',
+      ClusterRegion: 'All',
     };
 
     setSelected(defaultFilter);

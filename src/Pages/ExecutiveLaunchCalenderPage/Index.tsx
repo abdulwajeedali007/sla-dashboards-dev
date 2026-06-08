@@ -25,13 +25,16 @@ function Index() {
     Year: currentYear,
     ProjectType: 'All',
     ClusterType: 'All',
+    ClusterRegion: 'All',
   });
 
   const [appliedFilter, setAppliedFilter] = useState({
     Year: currentYear,
     ProjectType: 'All',
     ClusterType: 'All',
+    ClusterRegion: 'All',
   });
+  // console.log(appliedFilter, selected);
   const dispatch = useAppDispatch();
   const { data, loading } = useSelector(
     (state: RootState) => state.calenderLaunch,
@@ -42,7 +45,6 @@ function Index() {
 
   const timelineData = useMemo(() => {
     if (!data) return [];
-
     return data ? getFilterFormOptions(data, appliedFilter, currentYear) : [];
   }, [data, appliedFilter]);
 
@@ -51,6 +53,7 @@ function Index() {
       Year: currentYear,
       ProjectType: 'All',
       ClusterType: 'All',
+      ClusterRegion: 'All',
     };
 
     setSelected(defaultFilter);
@@ -85,7 +88,7 @@ function Index() {
         />
         <InfoBlock
           Icon={Boxes}
-          title="Cluster Launching this quater"
+          title=" Total no of clusters launched"
           value={42}
           IconColor="text-green-700"
         />

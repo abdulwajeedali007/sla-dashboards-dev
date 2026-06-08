@@ -107,11 +107,12 @@ export default function Index({
           {/* LEFT TABLE */}
           <div className="border-r border-gray-200 bg-white md:col-span-12 overflow-hidden">
             {/* HEADER */}
-            <div className="grid grid-cols-6 h-[70px]  leading-2 items-center border-b border-gray-200 bg-gray-200 px-2 text-sm font-bold text-gray-700 sticky top-0 z-10 sm:px-4">
+            <div className="flex h-[70px] justify-between items-center border-b border-gray-200 bg-gray-700 px-2 text-sm font-bold text-white sticky top-0 z-10 sm:px-4">
               <div>Project / Cluster</div>
               <div>No of Units</div>
               <div>Marketing Launch Dates</div>
               <div>Booking Launch Dates</div>
+              <div>Region</div>
               <div>No of Units Sold</div>
               <div>Price in AED</div>
             </div>
@@ -165,6 +166,7 @@ export default function Index({
                             )
                           : '-'}
                       </div>
+                      <div>{cluster.ClusterRegion}</div>
                     </div>
                   );
                 })}
