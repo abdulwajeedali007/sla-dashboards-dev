@@ -102,77 +102,100 @@ export default function Index({
 
   return (
     <>
-      <div className="rounded border border-gray-200 bg-white shadow-sm overflow-x-auto ">
-        <div className=" min-w-[1400px] sm:max-h-[650px] md:grid md:grid-cols-12 ">
+      <div className="rounded  bg-white shadow-sm overflow-x-auto ">
+        <div className="grid grid-cols-12 min-w-[1400px] sm:max-h-[650px] md:grid md:grid-cols-12 ">
           {/* LEFT TABLE */}
-          <div className="border-r border-gray-200 bg-white md:col-span-12 overflow-hidden">
-            {/* HEADER */}
-            <div className="flex h-[70px] justify-between items-center border-b border-gray-200 bg-gray-700 px-2 text-sm font-bold text-white sticky top-0 z-10 sm:px-4">
-              <div>Project / Cluster</div>
-              <div>No of Units</div>
-              <div>Marketing Launch Dates</div>
-              <div>Booking Launch Dates</div>
-              <div>Region</div>
-              <div>No of Units Sold</div>
-              <div>Price in AED</div>
-            </div>
+          <table className="w-full col-span-12 border-collapse">
+            <thead>
+              <tr className="h-[70px] border-b text-center border-gray-200 bg-gray-700 text-sm font-bold text-white">
+                <th className="text-left px-4">Project / Cluster</th>
+                <th>No of Units</th>
+                <th>Marketing Launch Dates</th>
+                <th>Booking Launch Dates</th>
+                <th>Region</th>
+                <th>No of Units Sold</th>
+                <th>No of Units Remaining</th>
+                <th>Price in AED</th>
+              </tr>
+            </thead>
 
-            {/* BODY */}
-            {groupVisibleTasks.map((project: TimelineProject) => (
-              <div key={project.projectName} className="relative ">
-                {/* Project Header */}
-                <p className=" mb-0  px-4 text-xs font-bold p-1 bg-gray-100 text-gray-700 shadow">
-                  {project.projectName}
-                </p>
-
-                {/* Cluster Rows */}
-                {project.clusters.map((cluster: TimelineCluster) => {
-                  const marketingPhase = cluster.phases.find(
-                    (p: TimelinePhase) => p.phase === 'Marketing Launch Date',
-                  );
-
-                  const bookingPhase = cluster.phases.find(
-                    (p: TimelinePhase) => p.phase === 'Booking Launch Date',
-                  );
-
-                  return (
-                    <div
-                      key={cluster.clusterId}
-                      className="grid grid-cols-6 h-[45px] items-center  border-b  border-gray-200 px-4 text-sm"
+            <tbody>
+              {groupVisibleTasks.map((project: TimelineProject) => (
+                <>
+                  {/* Project Header Row */}
+                  <tr key={`project-${project.projectName}`}>
+                    <td
+                      colSpan={8}
+                      className="mb-0 px-4 text-xs font-bold p-1 bg-gray-100 text-gray-700"
                     >
-                      <Link
-                        to={`/cluster-execution/${cluster.clusterCode}`}
-                        className="pl-1 text-blue-600 font-semibold text-xs sm:text-sm"
+                      {project.projectName}
+                    </td>
+                  </tr>
+
+                  {/* Cluster Rows */}
+                  {project.clusters.map((cluster: TimelineCluster) => {
+                    const noofunitssold = Math.ceil(Math.random() * 10);
+                    const price =
+                      Math.floor(Math.random() * (800 - 500 + 1)) + 500;
+                    const noofunitsremaining =
+                      Number(cluster?.clusterUnits ?? 0) - noofunitssold;
+
+                    const marketingPhase = cluster.phases.find(
+                      (p: TimelinePhase) => p.phase === 'Marketing Launch Date',
+                    );
+
+                    const bookingPhase = cluster.phases.find(
+                      (p: TimelinePhase) => p.phase === 'Booking Launch Date',
+                    );
+
+                    return (
+                      <tr
+                        key={cluster.clusterId}
+                        className="h-[50px] text-center border-b border-gray-200 px-4 text-sm"
                       >
-                        {cluster.clusterName}
-                      </Link>
+                        <td className="text-left px-6">
+                          <Link
+                            to={`/cluster-execution/${cluster.clusterCode}`}
+                            className="pl-1 text-blue-600 font-semibold text-xs sm:text-sm"
+                          >
+                            {cluster.clusterName}
+                          </Link>
+                        </td>
 
-                      <div>{cluster.clusterUnits}</div>
+                        <td>{cluster.clusterUnits}</td>
 
-                      <div>
-                        {marketingPhase?.endDate
-                          ? format(
-                              new Date(marketingPhase.endDate),
-                              'dd MMM yyyy',
-                            )
-                          : '-'}
-                      </div>
+                        <td>
+                          {marketingPhase?.endDate
+                            ? format(
+                                new Date(marketingPhase.endDate),
+                                'dd MMM yyyy',
+                              )
+                            : '-'}
+                        </td>
 
-                      <div>
-                        {bookingPhase?.startDate
-                          ? format(
-                              new Date(bookingPhase.startDate),
-                              'dd MMM yyyy',
-                            )
-                          : '-'}
-                      </div>
-                      <div>{cluster.ClusterRegion}</div>
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
+                        <td>
+                          {bookingPhase?.startDate
+                            ? format(
+                                new Date(bookingPhase.startDate),
+                                'dd MMM yyyy',
+                              )
+                            : '-'}
+                        </td>
+
+                        <td>{cluster.clusterRegion}</td>
+
+                        <td>{noofunitssold}</td>
+
+                        <td>{noofunitsremaining}</td>
+
+                        <td>{price} M</td>
+                      </tr>
+                    );
+                  })}
+                </>
+              ))}
+            </tbody>
+          </table>
 
           {/* RIGHT TIMELINE */}
           {/* <div className="w-full bg-white md:col-span-6">

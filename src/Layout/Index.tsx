@@ -16,7 +16,7 @@ function Index() {
         </NavLink>{' '}
         /{' '}
         <NavLink to="/cluster-execution" className={navClass}>
-          Cluster Execuation
+          Cluster Execution
         </NavLink>{' '}
         /
         <NavLink to="/sla-readiness" className={navClass}>

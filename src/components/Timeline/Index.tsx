@@ -60,11 +60,14 @@ export default function Timeline({
   // Group the tasks as per the required data
   const groupVisibleTasks: TimelineProject[] =
     groupVisibleTaskDetails(timelineTasks);
+
   // Flatten data as per chart dataset
   const visibleTasks = useMemo(
     () => flattenTimelineData(groupVisibleTasks),
     [groupVisibleTasks],
   );
+
+  console.log(groupVisibleTasks);
 
   // ---------------- FIXED Y-AXIS LABELS ----------------
   const yLabels = useMemo(() => {
@@ -125,7 +128,7 @@ export default function Timeline({
   return (
     <>
       <div className="overflow-y-auto sm:max-h-[650px]  flex">
-        <div className=" min-w-[140px]    relative mt-5 ">
+        <div className=" min-w-[180px]    relative mt-5 ">
           {groupVisibleTasks.map((project, index) => {
             // console.log(project);
             const currentTop = runningTop;

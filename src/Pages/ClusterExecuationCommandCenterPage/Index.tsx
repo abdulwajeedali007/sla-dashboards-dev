@@ -172,37 +172,37 @@ function Index() {
               // bgLightColor="bg-gray-200"
               // tagColor="bg-gray-100"
               // borderColor="border-gray-700"
-              mileStoneNo={1}
+              // mileStoneNo={1}
             />
             <MileStoneWorkFlow
               title={inventoryPricing}
               percentage={percentageOfInventoryPricing}
               steps={inventoryPricingData}
-              mileStoneNo={2}
+              // mileStoneNo={2}
             />
             <MileStoneWorkFlow
               title={marketingReadiness}
               percentage={percentageOfMarketReadiness}
               steps={marketingReadinessData}
-              mileStoneNo={3}
+              // mileStoneNo={3}
             />
             <MileStoneWorkFlow
               title={financialReadiness}
               percentage={percentageOfFinancialReadiness}
               steps={financialReadinessData}
-              mileStoneNo={4}
+              // mileStoneNo={4}
             />
             <MileStoneWorkFlow
               title={spaReadiness}
               percentage={percentageOfspaReadiness}
               steps={spaReadinessData}
-              mileStoneNo={5}
+              // mileStoneNo={5}
             />
             <MileStoneWorkFlow
               title={testBookingReadiness}
               percentage={percentageOfTestBookingReadiness}
               steps={testBookingReadinessData}
-              mileStoneNo={6}
+              // mileStoneNo={6}
             />
           </div>
         </div>

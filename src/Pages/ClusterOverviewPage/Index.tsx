@@ -14,14 +14,14 @@ function Index() {
     Year: currentYear,
     ProjectType: 'All',
     ClusterType: 'All',
-    ClusterRegion: 'All',
+    ClusterRegion: 'United Arab Emirates',
   });
 
   const [appliedFilter, setAppliedFilter] = useState<formStateType>({
     Year: currentYear,
     ProjectType: 'All',
     ClusterType: 'All',
-    ClusterRegion: 'All',
+    ClusterRegion: 'United Arab Emirates',
   });
   const dispatch = useAppDispatch();
 
@@ -43,7 +43,7 @@ function Index() {
       Year: currentYear,
       ProjectType: 'All',
       ClusterType: 'All',
-      ClusterRegion: 'All',
+      ClusterRegion: 'United Arab Emirates',
     };
 
     setSelected(defaultFilter);

@@ -9,7 +9,7 @@ import {
   CalendarDays,
   CircleCheckBig,
   Info,
-  InfoIcon,
+  // InfoIcon,
   TriangleAlert,
 } from 'lucide-react';
 import { useEffect } from 'react';
@@ -25,14 +25,14 @@ function Index() {
     Year: currentYear,
     ProjectType: 'All',
     ClusterType: 'All',
-    ClusterRegion: 'All',
+    ClusterRegion: 'United Arab Emirates',
   });
 
   const [appliedFilter, setAppliedFilter] = useState({
     Year: currentYear,
     ProjectType: 'All',
     ClusterType: 'All',
-    ClusterRegion: 'All',
+    ClusterRegion: 'United Arab Emirates',
   });
   // console.log(appliedFilter, selected);
   const dispatch = useAppDispatch();
@@ -53,7 +53,7 @@ function Index() {
       Year: currentYear,
       ProjectType: 'All',
       ClusterType: 'All',
-      ClusterRegion: 'All',
+      ClusterRegion: 'United Arab Emirates',
     };
 
     setSelected(defaultFilter);
@@ -88,7 +88,7 @@ function Index() {
         />
         <InfoBlock
           Icon={Boxes}
-          title=" Total no of clusters launched"
+          title="Overall Clusters getting launched"
           value={42}
           IconColor="text-green-700"
         />
@@ -133,13 +133,13 @@ function Index() {
                   <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
                     <div className="h-full w-full rounded-full bg-yellow-500"></div>
                   </div>
-                  <p className="text-xs sm:text-base">Marketing Ready</p>
+                  <p className="text-xs sm:text-base">Marketing Launch Ready</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
                     <div className="h-full w-full rounded-full bg-green-700"></div>
                   </div>
-                  <p className="text-xs sm:text-base">Booking Ready</p>
+                  <p className="text-xs sm:text-base">Booking Launch Ready</p>
                 </div>
               </div>
             </div>
@@ -151,14 +151,14 @@ function Index() {
       </div>
       <div className="mt-5 mb-10 ">
         <div className="flex gap-2 items-center">
-          <InfoIcon color="blue" />
+          {/* <InfoIcon color="blue" /> */}
           <div>
-            <p className="inline">
-              Want know more about project wise cluster details{' '}
-            </p>
-            <Link to={'/cluster-overview'} className="text-blue-700">
+            <Link to={'/cluster-overview'} className="text-blue-700 underline">
               Click Here{' '}
             </Link>
+            <p className="inline">
+              Want to know more about project wise cluster details{' '}
+            </p>
           </div>
         </div>
       </div>

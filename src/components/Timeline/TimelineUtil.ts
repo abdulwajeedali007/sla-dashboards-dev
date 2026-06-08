@@ -5,6 +5,9 @@ export const groupVisibleTaskDetails = (
   timelineTasks: CalenderClusterData[],
 ) => {
   return timelineTasks.reduce((acc: any[], item: any) => {
+    if (!item.SLTProjectName || !item.SLTClusterName) {
+      return acc;
+    }
     let project = acc.find((p) => p.projectName === item.SLTProjectName);
 
     if (!project) {
@@ -25,7 +28,7 @@ export const groupVisibleTaskDetails = (
         clusterCode: item.pyID,
         clusterId: item.SLTClusterID,
         clusterName: item.SLTClusterName,
-        ClusterRegion: item.ClusterRegion,
+        clusterRegion: item.ClusterRegion ?? '-',
         clusterUnits: item.SLTProposedNumberOfInventoryUnits,
         phases: [],
       };

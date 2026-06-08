@@ -28,7 +28,8 @@ function Index({
   const { years } = getYears();
   const projectNames = data ? getProjectNames(data, selected.Year) : [];
   const clusterNames = data ? getTaskNames(data, selected.ProjectType) : [];
-  const clusterRegion = data ? getRegionNames(data, selected.ProjectType) : [];
+  const clusterRegion = data ? getRegionNames(data) : [];
+
   return (
     <>
       <div className="mb-6 flex rounded p-8 bg-gray-200 flex-col items-center justify-between lg:flex-row md:flex-row md:items-center ">
@@ -41,14 +42,14 @@ function Index({
             selected={selected.Year}
           />
           <Dropdown
-            label={'Project Type'}
+            label={'Project'}
             field="ProjectType"
             values={['All', ...projectNames]}
             setSelected={setSelected}
             selected={selected.ProjectType}
           />
           <Dropdown
-            label={'Cluster Type'}
+            label={'Cluster'}
             field="ClusterType"
             values={['All', ...clusterNames]}
             setSelected={setSelected}

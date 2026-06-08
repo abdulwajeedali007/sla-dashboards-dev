@@ -28,7 +28,7 @@ function Index({
       >
         <div className="absolute top-1/2 -translate-y-1/2 flex flex-col   items-center">
           <div
-            className={`h-6 w-6 rounded-full text-xs  text-white flex justify-center items-center ${bgColor}`}
+            className={`h-6 w-6 rounded-full text-xs  text-white flex justify-center items-center ${bgColor} hover: cursor-pointer hover:bg-gray-800`}
           >
             {stepNo}
           </div>

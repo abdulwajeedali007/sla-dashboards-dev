@@ -3,17 +3,14 @@ export type Task = {
   name: string;
   startDate: string;
   endDate: string;
-  progress: number;
   updatedBy: string;
-  status: 'completed' | 'inprogress' | 'notstarted' | 'delay';
+  status: 'completed' | 'inprogress' | 'new';
   lastUpdated: string;
   completed?: number;
   inprogress?: number;
   slabreached?: number;
-  delayed?: number;
-  pending?: number;
   new?: number;
-  autocomplete?: number;
+  totalsteps: number;
 };
 
 export type Milestone = {
@@ -35,7 +32,7 @@ export type formStateType = {
   Year: number;
   ProjectType: string;
   ClusterType: string;
-  ClusterRegion: string | null;
+  ClusterRegion: string;
 };
 
 export type SlaTask = {
@@ -54,7 +51,7 @@ export type CalenderClusterData = {
   SLTBookingLaunchDate: string;
   pxObjClass: string;
   SLTProjectName: string;
-  ClusterRegion: string | null;
+  ClusterRegion: string;
   SLTMarketingLaunchDate: string;
   SLTProposedNumberOfInventoryUnits: number;
   SLTClusterID: string;
@@ -70,7 +67,7 @@ export type TimelineCluster = {
   clusterCode: string;
   clusterId: string;
   clusterName: string | null;
-  ClusterRegion: string;
+  clusterRegion: string;
   clusterUnits: number | string;
   phases: TimelinePhase[];
 };

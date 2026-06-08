@@ -26,7 +26,7 @@ function Index() {
           Icon={CircleCheckBig}
           title={'Total clusters'}
           ValueColor="text-green-700"
-          value={22}
+          value={9}
           IconColor="text-white"
           IconBg="bg-green-700"
           info={'active'}
@@ -42,7 +42,7 @@ function Index() {
         <InfoBlock
           Icon={User2Icon}
           title="New"
-          value={5}
+          value={2}
           IconColor="text-white"
           IconBg="bg-gray-700"
           info={'Steps'}
@@ -51,7 +51,7 @@ function Index() {
         <InfoBlock
           Icon={Clock7}
           title="In Progess"
-          value={6}
+          value={2}
           IconColor="text-white"
           IconBg="bg-yellow-500"
           ValueColor="text-yellow-500"
@@ -60,7 +60,7 @@ function Index() {
         <InfoBlock
           Icon={TriangleAlert}
           title="SLA Breached"
-          value={5}
+          value={0}
           IconColor="text-white"
           IconBg="bg-red-500"
           ValueColor="text-red-500"

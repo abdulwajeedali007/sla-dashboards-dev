@@ -9,6 +9,7 @@ interface dropdownTypes {
       Year: number;
       ProjectType: string;
       ClusterType: string;
+      ClusterRegion: string;
     }>
   >;
   selected: number | string;

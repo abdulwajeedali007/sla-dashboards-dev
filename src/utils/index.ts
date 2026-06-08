@@ -1,7 +1,6 @@
 import { getYear, addYears, subYears, format } from 'date-fns';
 import type { CalenderClusterData, formStateType, SlaTask } from '../Types';
 export function mileStone(data: SlaTask[], mileStoneName: string) {
-  //   console.log(milestone.toLowerCase());
   const readinessMileStonesData =
     data &&
     data
@@ -26,8 +25,10 @@ export function mileStone(data: SlaTask[], mileStoneName: string) {
     );
   const lengthOfCompletedMileStones =
     completedMileStones && completedMileStones.length;
-  const percentageOfmilesStones =
-    (lengthOfCompletedMileStones / lengthOfTotalMileStone) * 100;
+  const percentageOfmilesStones = (
+    (lengthOfCompletedMileStones / lengthOfTotalMileStone) *
+    100
+  ).toFixed(1);
 
   return { readinessMileStonesData, percentageOfmilesStones, mileStoneName };
 }
@@ -84,12 +85,12 @@ export function getTaskNames(
 }
 
 // GET REGION NAMES
-export function getRegionNames(
-  data: CalenderClusterData[],
-  selectedProjectName: string,
-) {
+export function getRegionNames(data: CalenderClusterData[]) {
   const selectedProject = data.filter(
-    (item) => item.SLTProjectName === selectedProjectName,
+    (item) =>
+      item.SLTProjectName != null &&
+      item.SLTClusterName != null &&
+      item.ClusterRegion != null,
   );
   const taskNames = selectedProject.reduce<string[]>((acc, item) => {
     if (item.SLTProjectName && !acc.includes(item.ClusterRegion)) {

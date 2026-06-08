@@ -4,7 +4,7 @@ import Layout from './Layout/Index';
 
 import ExecutiveLaunchCalenderPage from './Pages/ExecutiveLaunchCalenderPage/Index';
 import ClusterOverviewPage from './Pages/ClusterOverviewPage/Index';
-import ClusterExecuationCommandCenterPage from './Pages/ClusterExecuationCommandCenterPage/Index';
+import ClusterExecutionCommandCenterPage from './Pages/ClusterExecuationCommandCenterPage/Index';
 import SlaReadinessPage from './Pages/SlaReadinessPage/Index';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 
         <Route
           path="/cluster-execution/:id"
-          element={<ClusterExecuationCommandCenterPage />}
+          element={<ClusterExecutionCommandCenterPage />}
         />
         <Route path="/sla-readiness" element={<SlaReadinessPage />} />
 

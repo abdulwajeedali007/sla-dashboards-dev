@@ -1,11 +1,11 @@
-import { ChevronDown } from 'lucide-react';
+import { ListTodo } from 'lucide-react';
 import MilestoneNode from './MilestoneNode/Index';
 import type { SlaTask } from '../../Types';
 function Index({
   title,
   steps,
   percentage,
-  mileStoneNo,
+  // mileStoneNo,
 }: {
   title: string;
   steps: SlaTask[];
@@ -15,25 +15,25 @@ function Index({
   // tagColor: string;
   // bgLightColor: string;
   // borderColor: string;
-  mileStoneNo: number;
+  // mileStoneNo: number;
 }) {
   const segmentWidth = steps && 100 / steps.length;
   return (
     <>
       <div className=" border border-gray-300 overflow-hidden rounded mb-8 ">
         <div
-          className={`flex items-center justify-between gap-6 bg-gray-700  p-2 mb-6 hover:cursor-pointer sm:p-4`}
+          className={`flex items-center justify-between gap-6 bg-gray-700  p-2 mb-6  sm:p-4`}
         >
           <div className="flex gap-2">
-            <ChevronDown color="white" />
+            <ListTodo color="white" />
             <h3
               className={`uppercase text-white text-base font-medium md:text-lg`}
             >
-              {mileStoneNo}. {title}
+              {title}
             </h3>
           </div>
           <p
-            className={`bg-gray-700  rounded text-xs text-white  py-2 px-2  sm:px-3 sm:text-sm`}
+            className={`bg-gray-600  rounded text-xs text-white  py-2 px-2  sm:px-3 sm:text-sm`}
           >
             Completed {percentage}%
           </p>
