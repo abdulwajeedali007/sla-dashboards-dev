@@ -65,8 +65,9 @@ const Index = ({ tasks }: Props) => {
         <tbody>
           {tasks.map((task) => {
             const percentage = (
-              ((task.completed - task.slabreached) / task.totalsteps) *
-              100
+              (((task.completed ?? 0) - (task.slabreached ?? 0)) /
+              (task.totalsteps ?? 1)) *
+            100
             ).toFixed(1);
 
             return (
