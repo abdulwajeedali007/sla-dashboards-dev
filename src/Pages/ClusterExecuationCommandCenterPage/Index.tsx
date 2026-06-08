@@ -82,7 +82,7 @@ function Index() {
           Cluster Execution Command Center
         </h2>
       </div>
-      <div className="my-6 flex flex-col gap-2  sm:flex-row sm:flex-wrap sm:gap-5 sm:px-0">
+      <div className="mt-6 mb-12 flex flex-col gap-2  sm:flex-row sm:flex-wrap sm:gap-5 sm:px-0">
         <InfoBlock
           Icon={CircleCheckBig}
           title={'Cluster Readiness'}
@@ -130,30 +130,38 @@ function Index() {
           info={'Steps'}
         />
       </div>
-      <div className="flex justify-center gap-4 items-center mb-6 px-4 text-wrap md:justify-start ">
+      <div className="flex justify-start gap-4 items-center mb-6 px-4 text-wrap ">
         <div className="md:flex md:gap-4">
-          <div className="flex items-center gap-3 md:w-auto">
-            <p className="h-3 w-8 rounded bg-green-700"></p>
+          <div className="flex items-center gap-3 mb-2 md:w-auto md:mb-0">
+            <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
+              <div className="h-full w-full rounded-full bg-green-700"></div>
+            </div>
             <p className="text-base">Completed</p>
           </div>
           <div className="flex items-center gap-3 md:w-auto">
-            <p className="h-3 w-8 rounded bg-yellow-500"></p>
+            <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
+              <div className="h-full w-full rounded-full bg-yellow-500"></div>
+            </div>
             <p className="text-base">In Progress</p>
           </div>
         </div>
         <div className="md:flex md:gap-4">
-          <div className="flex items-center gap-3 md:w-auto">
-            <p className="h-3 w-8 rounded bg-gray-500"></p>
+          <div className="flex items-center gap-3 mb-2 md:w-auto md:mb-0">
+            <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
+              <div className="h-full w-full rounded-full bg-gray-500"></div>
+            </div>
             <p className="text-base">New</p>
           </div>
           <div className="flex items-center gap-3 md:w-auto">
-            <p className="h-3 w-8 rounded bg-red-500"></p>
+            <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
+              <div className="h-full w-full rounded-full bg-red-500"></div>
+            </div>
             <p className="text-base">Skipped</p>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 lg:col-span-9 ">
+        <div className="col-span-12 lg:col-span-9">
           <div className="mb-6">
             <MileStoneWorkFlow
               title={initialTracker}
