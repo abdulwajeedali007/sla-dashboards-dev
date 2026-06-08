@@ -130,11 +130,15 @@ function Index() {
               </div>
               <div className="flex gap-4 items-center">
                 <div className="flex items-center gap-2">
-                  <p className="bg-yellow-500  h-3 w-10 rounded"></p>
+                  <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
+                    <div className="h-full w-full rounded-full bg-yellow-500"></div>
+                  </div>
                   <p className="text-xs sm:text-base">Marketing Ready</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <p className="bg-green-700  h-3 w-10 rounded"></p>
+                  <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
+                    <div className="h-full w-full rounded-full bg-green-700"></div>
+                  </div>
                   <p className="text-xs sm:text-base">Booking Ready</p>
                 </div>
               </div>
