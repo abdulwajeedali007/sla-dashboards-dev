@@ -1,6 +1,5 @@
 import type { Task } from '../../Types';
 import TableRow from './TableRow/Index';
-import { departmentwiseTaskdetails } from '../../data.js';
 type Props = {
   tasks: Task[];
   departmentDetails: any;

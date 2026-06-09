@@ -1,5 +1,7 @@
-function Index({ departmentDetails }) {
-  const taskID = departmentDetails.find((item) => item.taskId);
+import type { TaskDetails } from '../../Types';
+
+function Index({ departmentDetails }: { departmentDetails: TaskDetails[] }) {
+  const taskID = departmentDetails.find((item: TaskDetails) => item.taskId);
   return (
     <div className="border border-gray-200 overflow-hidden rounded">
       <table className="w-full border-gray-200">
@@ -11,7 +13,7 @@ function Index({ departmentDetails }) {
           <th>Last Updated By</th>
         </thead>
         <tbody>
-          {departmentDetails.map((task) => (
+          {departmentDetails.map((task: TaskDetails) => (
             <>
               <tr className="text-center h-13 text-sm border-b border-gray-200">
                 <td className="text-left px-4">{task.taskName}</td>
