@@ -8,7 +8,7 @@ import {
   Boxes,
   CalendarDays,
   CircleCheckBig,
-  Info,
+  // Info,
   // InfoIcon,
   TriangleAlert,
 } from 'lucide-react';
@@ -53,7 +53,7 @@ function Index() {
       Year: currentYear,
       ProjectType: 'All',
       ClusterType: 'All',
-      ClusterRegion: 'United Arab Emirates',
+      ClusterRegion: 'All',
     };
 
     setSelected(defaultFilter);
@@ -72,10 +72,8 @@ function Index() {
     <>
       <div className="my-6 flex flex-col justify-between items-start  sm:flex-row sm:px-0 sm:flex-center">
         <div className="flex items-center gap-1 sm:gap-2 sm:flex-row">
-          <h2 className="text-2xl font-medium ">
-            Executive Launch Calender - Cluster Overview
-          </h2>
-          <Info className="cursor-pointer" />
+          <h2 className="text-2xl font-medium ">Cluster Launch Calender</h2>
+          {/* <Info className="cursor-pointer" /> */}
         </div>
         <p className="text-base text-gray-400">{`Last Updated: ${currentDate}`}</p>
       </div>
@@ -88,19 +86,19 @@ function Index() {
         />
         <InfoBlock
           Icon={Boxes}
-          title="Overall Clusters getting launched"
+          title="Overall Clusters Getting Launched"
           value={42}
           IconColor="text-green-700"
         />
         <InfoBlock
           Icon={CircleCheckBig}
-          title="Ready to accept Booking"
+          title="Ready To Accept Bookings"
           value={31}
           IconColor="text-green-700"
         />
         <InfoBlock
           Icon={TriangleAlert}
-          title="Delayed Cluster"
+          title="Delayed Clusters"
           value={4}
           IconColor="text-red-700"
         />
@@ -126,7 +124,7 @@ function Index() {
                 <h3 className="text-lg font-medium uppercase mb-3 sm:mb-0">
                   PROJECT & CLUSTER LAUNCH TIMELINE
                 </h3>
-                <Info className="cursor-pointer" />
+                {/* <Info className="cursor-pointer" /> */}
               </div>
               <div className="flex gap-4 items-center">
                 <div className="flex items-center gap-2">

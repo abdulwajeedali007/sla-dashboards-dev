@@ -2,10 +2,11 @@ import { Routes, Route, Navigate } from 'react-router';
 
 import Layout from './Layout/Index';
 
-import ExecutiveLaunchCalenderPage from './Pages/ExecutiveLaunchCalenderPage/Index';
+import ClusterLaunchCalenderPage from './Pages/ClusterLaunchCalenderPage/Index';
 import ClusterOverviewPage from './Pages/ClusterOverviewPage/Index';
-import ClusterExecutionCommandCenterPage from './Pages/ClusterExecuationCommandCenterPage/Index';
-import SlaReadinessPage from './Pages/SlaReadinessPage/Index';
+import TaskWiseDetailsPage from './Pages/TaskWiseDetailsPage/Index';
+import DepartmentWiseSLAPage from './Pages/DepartmentWiseSLAPage/Index';
+import OverallDepartmentWiseSLAPage from './Pages/OverallDepartmentWiseSLAPage/Index';
 
 function App() {
   return (
@@ -13,20 +14,29 @@ function App() {
       <Route element={<Layout />}>
         <Route
           index
-          path="/launch-calender"
-          element={<ExecutiveLaunchCalenderPage />}
+          path="/cluster-launch-calender"
+          element={<ClusterLaunchCalenderPage />}
         />
 
         <Route path="/cluster-overview" element={<ClusterOverviewPage />} />
 
         <Route
-          path="/cluster-execution/:id"
-          element={<ClusterExecutionCommandCenterPage />}
+          path="/task-wise-details/:id"
+          element={<TaskWiseDetailsPage />}
         />
-        <Route path="/sla-readiness" element={<SlaReadinessPage />} />
-
+        <Route
+          path="/department-wise-sla"
+          element={<DepartmentWiseSLAPage />}
+        />
+        <Route
+          path="/overall-department-wise-sla"
+          element={<OverallDepartmentWiseSLAPage />}
+        />
         {/* Default Route */}
-        <Route path="*" element={<Navigate to="/launch-calender" replace />} />
+        <Route
+          path="*"
+          element={<Navigate to="/cluster-launch-calender" replace />}
+        />
       </Route>
     </Routes>
   );

@@ -1,16 +1,24 @@
 export type Task = {
   id: number;
   name: string;
-  startDate: string;
-  endDate: string;
-  updatedBy: string;
-  status: 'completed' | 'inprogress' | 'new';
-  lastUpdated: string;
+  // startDate: string;
+  // endDate: string;
+  // updatedBy: string;
+  // status: 'completed' | 'inprogress' | 'new';
+  // lastUpdated: string;
   completed?: number;
   inprogress?: number;
   slabreached?: number;
   new?: number;
   totalsteps: number;
+};
+
+export type TaskDetails = {
+  taskName: string;
+  taskId: string;
+  startDate: string;
+  endDate: string;
+  updatedBy: string;
 };
 
 export type Milestone = {

@@ -7,20 +7,24 @@ function Index() {
   return (
     <>
       <nav className="p-3 bg-gray-200 font-semibold text-white text-xs sm:text-base">
-        <NavLink to="/launch-calender" className={navClass}>
-          Launch Calender
+        <NavLink to="/cluster-launch-calender" className={navClass}>
+          Cluster Launch Calender
         </NavLink>{' '}
         /{' '}
         <NavLink to="/cluster-overview" className={navClass}>
           Cluster Overview
         </NavLink>{' '}
         /{' '}
-        <NavLink to="/cluster-execution" className={navClass}>
-          Cluster Execution
+        <NavLink to="/task-wise-details" className={navClass}>
+          Task Wise Details
         </NavLink>{' '}
         /
-        <NavLink to="/sla-readiness" className={navClass}>
-          SLA Readiness
+        <NavLink to="/department-wise-sla" className={navClass}>
+          Department Wise SLA
+        </NavLink>
+        /
+        <NavLink to="/overall-department-wise-sla" className={navClass}>
+          Overall Department Wise SLA
         </NavLink>
       </nav>
 

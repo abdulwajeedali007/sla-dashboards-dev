@@ -56,7 +56,7 @@ function Index({
             selected={selected.ClusterType}
           />
           <Dropdown
-            label={'Region'}
+            label={'Country'}
             field="ClusterRegion"
             values={['All', ...clusterRegion]}
             setSelected={setSelected}

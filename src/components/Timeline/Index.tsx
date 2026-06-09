@@ -148,7 +148,7 @@ export default function Timeline({
                   <Link
                     key={cluster.clusterId}
                     // to={`/cluster/${cluster.id}`}
-                    to={`/cluster-execution/${cluster.clusterCode}`}
+                    to={`/task-wise-details/${cluster.clusterCode}`}
                     className="text-blue-600 flex items-center justify-center hover:underline text-xs sm:text-sm font-semibold"
                     style={{
                       height: `${ROW_HEIGHT}px`,

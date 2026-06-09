@@ -112,7 +112,7 @@ export default function Index({
                 <th>No of Units</th>
                 <th>Marketing Launch Dates</th>
                 <th>Booking Launch Dates</th>
-                <th>Region</th>
+                <th>Country</th>
                 <th>No of Units Sold</th>
                 <th>No of Units Remaining</th>
                 <th>Price in AED</th>
@@ -155,7 +155,7 @@ export default function Index({
                       >
                         <td className="text-left px-6">
                           <Link
-                            to={`/cluster-execution/${cluster.clusterCode}`}
+                            to={`/task-wise-details/${cluster.clusterCode}`}
                             className="pl-1 text-blue-600 font-semibold text-xs sm:text-sm"
                           >
                             {cluster.clusterName}
