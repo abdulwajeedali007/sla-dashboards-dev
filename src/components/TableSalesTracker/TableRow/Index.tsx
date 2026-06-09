@@ -31,7 +31,7 @@ const TableRow = ({ task, percentage, departmentDetails }: TableRowTypes) => {
           <span>{task.name}</span>
         </td>
 
-        <td className="px-2 py-5  text-wrap border-l border-gray-100">
+        <td className="px-2 py-5  text-wrap border-l border-r border-gray-100">
           {task.totalsteps}
         </td>
         <td className="px-1 py-5">{task.completed}</td>
