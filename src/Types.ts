@@ -15,7 +15,7 @@ export type Task = {
 
 export type TaskDetails = {
   taskName: string;
-  taskId: string;
+  taskId?: string;
   startDate: string;
   endDate: string;
   updatedBy: string;
