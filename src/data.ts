@@ -3,6 +3,7 @@ export const departmentwiseslatasks: Task[] = [
   {
     id: 1,
     name: 'Development and Concepts',
+
     totalsteps: 3,
     completed: 2,
     inprogress: 1,
@@ -12,6 +13,7 @@ export const departmentwiseslatasks: Task[] = [
   {
     id: 2,
     name: 'Budgeting',
+
     totalsteps: 3,
     completed: 1,
     inprogress: 1,
@@ -21,6 +23,7 @@ export const departmentwiseslatasks: Task[] = [
   {
     id: 3,
     name: 'Technical Design',
+
     totalsteps: 3,
     completed: 2,
     inprogress: 0,
@@ -30,6 +33,7 @@ export const departmentwiseslatasks: Task[] = [
   {
     id: 4,
     name: 'Salesforce IT',
+
     totalsteps: 3,
     completed: 2,
     inprogress: 0,
@@ -55,21 +59,21 @@ export const departmentwiseslatasks: Task[] = [
 export const departmentwiseTaskdetails: TaskDetails[] = [
   {
     taskName: 'Initiate Sales Tracker and Attach F&A Document',
-    taskId: 'SLT-1148',
+    // taskId: 'SLT-1148',
     startDate: '2026-06-05',
     endDate: '2026-06-05',
     updatedBy: 'Srujan',
   },
   {
     taskName: 'Capture Marketing Name and Launch Date',
-    taskId: 'SLT-1148',
+    // taskId: 'SLT-1148',
     startDate: '2026-06-05',
     endDate: '2026-06-05',
     updatedBy: 'Kautuk',
   },
   {
     taskName: 'DC HOD Approve or Reject',
-    taskId: 'SLT-1148',
+    // taskId: 'SLT-1148',
     startDate: '2026-06-05',
     endDate: '2026-06-05',
     updatedBy: 'Harish',
@@ -80,11 +84,7 @@ export const overalldepartmentwiseslatasks: Task[] = [
   {
     id: 1,
     name: 'Development and Concepts',
-    // startDate: '2026-06-05',
-    // endDate: '2026-06-05',
-    // status: 'completed',
-    // updatedBy: 'Kautuk Shet',
-    // caseId: 'SLT-1148',
+
     totalsteps: 6,
     completed: 4,
     inprogress: 2,
@@ -94,11 +94,7 @@ export const overalldepartmentwiseslatasks: Task[] = [
   {
     id: 2,
     name: 'Budgeting',
-    // startDate: '2026-06-05',
-    // endDate: '2026-06-05',
-    // status: 'inprogress',
-    // updatedBy: 'Muthyala Srujan',
-    // caseId: 'SLT-1148',
+
     totalsteps: 6,
     completed: 2,
     inprogress: 2,
@@ -108,11 +104,7 @@ export const overalldepartmentwiseslatasks: Task[] = [
   {
     id: 3,
     name: 'Technical Design',
-    // startDate: '2026-06-05',
-    // endDate: '2026-06-05',
-    // status: 'inprogress',
-    // updatedBy: 'Rajesh',
-    // caseId: 'SLT-1148',
+
     totalsteps: 6,
     completed: 4,
     inprogress: 0,
@@ -122,11 +114,7 @@ export const overalldepartmentwiseslatasks: Task[] = [
   {
     id: 4,
     name: 'Salesforce IT',
-    // startDate: '2026-05-06',
-    // endDate: '2026-08-15',
-    // status: 'inprogress',
-    // updatedBy: 'Raviteja Dhanukonda',
-    // lastUpdated: 'SLT-1148',
+
     totalsteps: 6,
     completed: 4,
     inprogress: 0,
@@ -136,11 +124,7 @@ export const overalldepartmentwiseslatasks: Task[] = [
   {
     id: 5,
     name: 'Central Planning',
-    // startDate: '2026-05-10',
-    // endDate: '2026-06-15',
-    // status: 'new',
-    // updatedBy: 'Sireesha Pulle',
-    // lastUpdated: 'SLT-1148',
+
     totalsteps: 6,
     completed: 4,
     inprogress: 2,
@@ -171,5 +155,25 @@ export const overalldepartmentwiseTaskdetails: TaskDetails[] = [
     endDate: '2026-06-06',
     updatedBy: 'Harish',
   },
-  ...departmentwiseTaskdetails,
+  {
+    taskName: 'Initiate Sales Tracker and Attach F&A Document',
+    taskId: 'SLT-1148',
+    startDate: '2026-06-05',
+    endDate: '2026-06-05',
+    updatedBy: 'Srujan',
+  },
+  {
+    taskName: 'Capture Marketing Name and Launch Date',
+    taskId: 'SLT-1148',
+    startDate: '2026-06-05',
+    endDate: '2026-06-05',
+    updatedBy: 'Kautuk',
+  },
+  {
+    taskName: 'DC HOD Approve or Reject',
+    taskId: 'SLT-1148',
+    startDate: '2026-06-05',
+    endDate: '2026-06-05',
+    updatedBy: 'Harish',
+  },
 ];
