@@ -5,11 +5,13 @@ function Index({
   segmentWidth,
   index,
   stepNo,
+  totalSteps,
 }: {
   step: SlaTask;
   index: number;
   stepNo: string;
   segmentWidth: number;
+  totalSteps: number;
 }) {
   let bgColor =
     step.TaskStatus === 'Completed'
@@ -18,15 +20,24 @@ function Index({
         ? 'bg-yellow-500'
         : 'bg-gray-500';
 
-  let left = (index + 1 - 1) * segmentWidth;
+  const width =
+    index === 0 || index === totalSteps - 1 ? segmentWidth / 2 : segmentWidth;
+
+  const left = index === 0 ? 0 : segmentWidth / 2 + (index - 1) * segmentWidth;
 
   return (
     <>
       <div
-        style={{ left: `${left}%`, width: `${segmentWidth}%` }}
-        className={`absolute h-[4px]   flex flex-col items-center ${bgColor}`}
+        style={{ left: `${left}%`, width: `${width}%` }}
+        className={`absolute h-[4px]   flex flex-col ${
+          index === 0
+            ? 'items-start'
+            : index === totalSteps - 1
+              ? 'items-end'
+              : 'items-center'
+        } ${bgColor}`}
       >
-        <div className="absolute top-1/2 -translate-y-1/2 flex flex-col   items-center">
+        <div className="absolute top-1/2 -translate-y-1/2 flex flex-col items-center">
           <div
             className={`h-6 w-6 rounded-full text-xs  text-white flex justify-center items-center ${bgColor} hover: cursor-pointer hover:bg-gray-800`}
           >

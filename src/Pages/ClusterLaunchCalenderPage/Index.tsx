@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react';
+
+import { fetchcalenderLaunch } from '../../store/calenderlaunchSlice';
+
 import Timeline from '../../components/Timeline/Index';
 import InfoBlock from '../../components/InfoBlock/Index';
 import FormFilter from '../../components/Forms/Index';
-import { fetchcalenderLaunch } from '../../store/calenderlaunchSlice';
 
 import {
   Boxes,
@@ -79,28 +81,32 @@ function Index() {
       </div>
       <div className="mb-6 flex flex-col gap-2  sm:flex-row sm:flex-wrap sm:gap-5 sm:px-0">
         <InfoBlock
-          Icon={CalendarDays}
-          title={'Upcoming Launches'}
-          value={23}
-          IconColor="text-blue-700"
-        />
-        <InfoBlock
           Icon={Boxes}
           title="Overall Clusters Getting Launched"
           value={42}
           IconColor="text-green-700"
+          border
+        />
+        <InfoBlock
+          Icon={CalendarDays}
+          title={'Upcoming Launches'}
+          value={23}
+          IconColor="text-blue-700"
+          border
         />
         <InfoBlock
           Icon={CircleCheckBig}
           title="Ready To Accept Bookings"
-          value={31}
+          value={10}
           IconColor="text-green-700"
+          border
         />
         <InfoBlock
           Icon={TriangleAlert}
           title="Delayed Clusters"
-          value={4}
+          value={2}
           IconColor="text-red-700"
+          border
         />
       </div>
       {/* <div className=""> */}
@@ -155,7 +161,7 @@ function Index() {
               Click Here{' '}
             </Link>
             <p className="inline">
-              Want to know more about project wise cluster details{' '}
+              to know more about project wise cluster details{' '}
             </p>
           </div>
         </div>

@@ -4,10 +4,12 @@ export function mileStone(data: SlaTask[], mileStoneName: string) {
   const readinessMileStonesData =
     data &&
     data
-      .filter(
-        (milestone) =>
-          milestone.Milestones.toLowerCase() === mileStoneName.toLowerCase(),
-      )
+      .filter((milestone) => {
+        return (
+          milestone.Milestones !== undefined &&
+          milestone.Milestones.toLowerCase() === mileStoneName.toLowerCase()
+        );
+      })
       .sort((a, b) =>
         a.StepNumber.localeCompare(b.StepNumber, undefined, {
           numeric: true,

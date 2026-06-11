@@ -17,7 +17,7 @@ function Index({
   // borderColor: string;
   // mileStoneNo: number;
 }) {
-  const segmentWidth = steps && 100 / steps.length;
+  const segmentWidth = steps.length > 1 ? 100 / (steps.length - 1) : 100;
   return (
     <>
       <div className=" border border-gray-300 overflow-hidden rounded mb-8 ">
@@ -39,16 +39,17 @@ function Index({
           </p>
         </div>
         <div className="overflow-x-auto">
-          <div className="min-w-[960px] flex items-center px-10 pt-20 pb-24 sm:pb-24 sm:px-6 sm:pt-6">
-            <div className="relative h-[3px] bg-gray-600 w-full">
+          <div className="min-w-[960px] flex items-center pt-20 pb-24 sm:pb-24 sm:px-6 sm:pt-6 ">
+            <div className="relative h-[3px] bg-gray-600 w-full mx-10 md:mx-5 ">
               {steps &&
                 steps.map((step: SlaTask, index: number) => (
                   <MilestoneNode
+                    key={step.pyGUID}
                     step={step}
                     index={index}
                     stepNo={step.StepNumber}
-                    key={step.pyGUID}
                     segmentWidth={segmentWidth}
+                    totalSteps={steps.length}
                   />
                 ))}
             </div>
