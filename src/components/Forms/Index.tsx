@@ -1,4 +1,4 @@
-import { useEffect, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import Dropdown from './FormComponents/DropDown';
 import type { formStateType } from '../../Types';
 import { useSelector } from 'react-redux';
@@ -30,10 +30,7 @@ function Index({
   const clusterNames = data ? getTaskNames(data, selected.ProjectType) : [];
   const clusterRegion = data ? getRegionNames(data) : [];
 
-  const handleSelection = (
-    field: keyof formStateType,
-    value: string | number,
-  ) => {
+  const handleSelection = (field: string | number, value: string | number) => {
     setSelected((prev) => {
       switch (field) {
         case 'Year':
