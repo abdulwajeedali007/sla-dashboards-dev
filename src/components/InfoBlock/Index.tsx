@@ -25,7 +25,7 @@ function Index({
   return (
     <>
       <div
-        className={` ${border ? 'border border-gray-200' : ' border-b last:border-0 md:border-r border-gray-200'} text-left rounded p-5 flex gap-4  w-full md:w-[48%] lg:flex-1`}
+        className={` ${border ? 'border border-gray-200' : ' border-b last:border-0 md:border-r md:border-b-0 border-gray-200'} text-left rounded p-5 flex gap-4  w-full md:w-[48%] lg:flex-1`}
       >
         <div className="">
           {Icon && (
