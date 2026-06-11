@@ -1,6 +1,3 @@
-import { departmentwiseslatasks, departmentwiseTaskdetails } from '../../data';
-import TableSalesTracker from '../../components/TableSalesTracker/Index';
-import InfoBlock from '../../components/InfoBlock/Index';
 import {
   CircleCheckBig,
   ClipboardList,
@@ -11,6 +8,12 @@ import {
   User2Icon,
 } from 'lucide-react';
 
+import TableSalesTracker from '../../components/TableSalesTracker/Index';
+import ProjectDetails from '../../components/ProjectDetails/Index';
+import InfoBlock from '../../components/InfoBlock/Index';
+
+import { departmentwiseslatasks, departmentwiseTaskdetails } from '../../data';
+
 function Index() {
   return (
     <>
@@ -20,7 +23,8 @@ function Index() {
           {/* <Info className="cursor-pointer" /> */}
         </div>
       </div>
-      <div className="mt-6 mb-8 flex flex-col gap-2  sm:flex-row sm:flex-wrap sm:gap-5 sm:px-0">
+      <ProjectDetails />
+      <div className="mt-6 mb-8 flex flex-col gap-2 border border-gray-200 rounded p-4  sm:flex-row sm:flex-wrap sm:gap-5 sm:px-0">
         <InfoBlock
           Icon={Tags}
           title={'Total Departments'}

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   CircleCheckBig,
   ClipboardList,
@@ -5,15 +6,17 @@ import {
   HousePlus,
   SkipForward,
 } from 'lucide-react';
-import InfoBlock from '../../components/InfoBlock/Index';
-import MileStoneWorkFlow from '../../components/MileStoneWorkFlow/Index';
 
 import { useDispatch, useSelector } from 'react-redux';
-import type { AppDispatch, RootState } from '../../store';
-import { useEffect } from 'react';
-import { fetchSlaTasks } from '../../store/pegaSlaTasksSlice';
-import { mileStone } from '../../utils';
 import { useParams } from 'react-router';
+import type { AppDispatch, RootState } from '../../store';
+import { fetchSlaTasks } from '../../store/pegaSlaTasksSlice';
+
+import InfoBlock from '../../components/InfoBlock/Index';
+import ProjectDetails from '../../components/ProjectDetails/Index';
+import MileStoneWorkFlow from '../../components/MileStoneWorkFlow/Index';
+
+import { mileStone } from '../../utils';
 import type { TaskStatusCount } from '../../Types';
 
 function Index() {
@@ -78,11 +81,10 @@ function Index() {
   return (
     <>
       <div className="flex my-6">
-        <h2 className="text-2xl font-medium ">
-          Cluster Execution Command Center
-        </h2>
+        <h2 className="text-2xl font-medium ">Task Wise Details</h2>
       </div>
-      <div className="mt-6 mb-12 flex flex-col gap-2  sm:flex-row sm:flex-wrap sm:gap-5 sm:px-0">
+      <ProjectDetails />
+      <div className="mt-6 mb-12 flex flex-col gap-2 border border-gray-200 p-4 rounded  sm:flex-row sm:flex-wrap sm:gap-5 sm:px-0">
         <InfoBlock
           Icon={CircleCheckBig}
           title={'Cluster Readiness'}

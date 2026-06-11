@@ -1,25 +1,28 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
+// import type { formStateType } from '../../../Types';
 
 interface dropdownTypes {
   label: string;
   values?: number[] | string[];
-  setSelected: React.Dispatch<
-    React.SetStateAction<{
-      Year: number;
-      ProjectType: string;
-      ClusterType: string;
-      ClusterRegion: string;
-    }>
-  >;
+  // setSelected: React.Dispatch<
+  //   React.SetStateAction<{
+  //     Year: number;
+  //     ProjectType: string;
+  //     ClusterType: string;
+  //     ClusterRegion: string;
+  //   }>
+  // >;
+  onSelect: (field: number | string, value: string | number) => void;
   selected: number | string;
-  field: string;
+  field: string | number;
 }
 
 export default function Dropdown({
   values,
   label,
-  setSelected,
+  // setSelected,
+  onSelect,
   selected,
   field,
 }: dropdownTypes) {
@@ -66,7 +69,8 @@ export default function Dropdown({
               <div
                 key={value}
                 onClick={() => {
-                  setSelected((prev) => ({ ...prev, [field]: value }));
+                  // setSelected((prev) => ({ ...prev, [field]: value }));
+                  onSelect(field, value);
                   setOpen(false);
                 }}
                 className="px-4 py-3 text-base border-b border-gray-100 hover:bg-gray-100 cursor-pointer"

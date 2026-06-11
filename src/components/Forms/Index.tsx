@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from 'react';
+import { useEffect, type Dispatch, type SetStateAction } from 'react';
 import Dropdown from './FormComponents/DropDown';
 import type { formStateType } from '../../Types';
 import { useSelector } from 'react-redux';
@@ -30,6 +30,47 @@ function Index({
   const clusterNames = data ? getTaskNames(data, selected.ProjectType) : [];
   const clusterRegion = data ? getRegionNames(data) : [];
 
+  const handleSelection = (
+    field: keyof formStateType,
+    value: string | number,
+  ) => {
+    setSelected((prev) => {
+      switch (field) {
+        case 'Year':
+          return {
+            Year: Number(value),
+            ProjectType: 'All',
+            ClusterType: 'All',
+            ClusterRegion: 'All',
+          };
+
+        case 'ProjectType':
+          return {
+            ...prev,
+            ProjectType: String(value),
+            ClusterType: 'All',
+            ClusterRegion: 'All',
+          };
+
+        case 'ClusterType':
+          return {
+            ...prev,
+            ClusterType: String(value),
+            ClusterRegion: 'All',
+          };
+
+        case 'ClusterRegion':
+          return {
+            ...prev,
+            ClusterRegion: String(value),
+          };
+
+        default:
+          return prev;
+      }
+    });
+  };
+
   return (
     <>
       <div className="mb-6 flex rounded p-8 bg-gray-200 flex-col items-center justify-between lg:flex-row md:flex-row md:items-center ">
@@ -38,29 +79,33 @@ function Index({
             label={'Year'}
             field="Year"
             values={years}
-            setSelected={setSelected}
+            // setSelected={setSelected}
             selected={selected.Year}
+            onSelect={handleSelection}
           />
           <Dropdown
             label={'Project'}
             field="ProjectType"
             values={['All', ...projectNames]}
-            setSelected={setSelected}
+            // setSelected={setSelected}
             selected={selected.ProjectType}
+            onSelect={handleSelection}
           />
           <Dropdown
             label={'Cluster'}
             field="ClusterType"
             values={['All', ...clusterNames]}
-            setSelected={setSelected}
+            // setSelected={setSelected}
             selected={selected.ClusterType}
+            onSelect={handleSelection}
           />
           <Dropdown
             label={'Country'}
             field="ClusterRegion"
             values={['All', ...clusterRegion]}
-            setSelected={setSelected}
+            // setSelected={setSelected}
             selected={selected.ClusterRegion}
+            onSelect={handleSelection}
           />
         </div>
         <div className="flex gap-2">
